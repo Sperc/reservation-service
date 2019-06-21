@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongodb:
+    image: 'bitnami/mongodb:3.6'
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_DATABASE=reservation
+      - MONGODB_ROOT_PASSWORD=reservation
+      - MONGODB_USERNAME=reservation
+      - MONGODB_PASSWORD=reservation
+    volumes:
+      - 'mongodb_data:/data'
+volumes:
+  mongodb_data:
+    driver: local

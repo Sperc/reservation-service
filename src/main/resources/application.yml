@@ -1,0 +1,23 @@
+server:
+  port: 9090
+spring:
+  data:
+    mongodb:
+      database: reservation
+      username: reservation
+      password: reservation
+      host: localhost
+      port: 27017
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+jwt:
+  header: Authorization
+  secret: SecretKeyToGenJWTs
+  expiration: 864000000
+
+data-management:
+  url: http://data-management
+  login: test
+  password: test
