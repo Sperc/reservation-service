@@ -1,8 +1,8 @@
 package com.orlikapp.reservation.infrastrucutre.controllers;
 
-import com.orlikapp.reservation.application.reservation.Reservation;
 import com.orlikapp.reservation.application.reservation.ReservationFacade;
 import com.orlikapp.reservation.application.reservation.dto.AddReservationCommand;
+import com.orlikapp.reservation.application.reservation.dto.AddReservationResponse;
 import com.orlikapp.reservation.application.reservation.dto.UserId;
 import com.orlikapp.reservation.infrastrucutre.SessionUtil;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class ReservationController {
     private final SessionUtil sessionUtil;
 
     @PostMapping
-    public Mono<Reservation> addReservation(@RequestBody AddReservationCommand command) {
+    public Mono<AddReservationResponse> addReservation(@RequestBody AddReservationCommand command) {
         final UserId userId = sessionUtil.getLoggedUser();
         log.info("Add reservation request:{} in userId context: {}", command, userId);
         return reservationFacade.addReservation(command, userId);
