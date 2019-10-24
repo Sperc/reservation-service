@@ -72,4 +72,3 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //        };
 //    }
 }
-https://github.com/Sperc/data-service.git
